@@ -10,16 +10,32 @@ const searchPhone = () => {
 
 // Display Search Result
 const displayPhone = brandName => {
-    console.log(brandName);
+    // console.log(brandName);
+
+    //Show how many result Found
+    const qtyText = document.getElementById('qty-text');
+    if(brandName.length <= 0){
+        qtyText.innerText = 'No Result Found';
+        qtyText.style.color = 'red';
+        return;
+    }else {
+        qtyText.innerText = `${brandName.length} Result Found`;
+        qtyText.style.color = '#000';
+    }
+
+    document.getElementById('showAll-btn').style.display = 'block';
+
     const displayPhone = document.getElementById('display-phone');
-    brandName.forEach(phone => {
-        // console.log(phone.brand);
+    displayPhone.textContent = ''; //clear previous search result.
+    brandName.slice(0, 20).forEach(phone => {
+        // console.log(phone);
+        
         const div = document.createElement('div');
-        div.classList.add('col-4','border-0','shadow');
+        div.classList.add('col-md-4');
         div.innerHTML = `
-        <div class="card p-2">
+        <div class="card p-3 border-0 shadow rounded">
             <img src="${phone.image}" class="card-img-top">
-            <div class="card-body">
+            <div class="card-body ">
                 <h5 class="card-title">Brand: ${phone.brand}</h5>
                 <h6 class="card-title">Name: ${phone.phone_name}</h6>
                 <button type="button" class="btn btn-primary">Phone Details</button>
