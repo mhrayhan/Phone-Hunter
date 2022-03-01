@@ -1,4 +1,25 @@
+/* google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500&family=Kaisei+Decol:wght@400;700&family=Poppins:wght@400;500;700&family=Roboto:wght@400;700&display=swap');
+
 #showAll-btn{
     display: none;
     align-items: right;
+}
+
+.card-img{
+    width: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.card-body p span {
+    font-weight: 500;
+}
+
+#details-card{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+#close-btn{
+    position: absolute;
+    right: 0;
 }
