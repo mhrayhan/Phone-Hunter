@@ -22,7 +22,7 @@ const displayPhone = brandName => {
         return false;
     }else {
         qtyText.innerText = `${brandName.length} Result Found`;
-        qtyText.style.color = '#000';
+        qtyText.style.color = '#00c52b';
     }
 
     document.getElementById('showAll-btn').style.display = 'block';
@@ -61,7 +61,7 @@ const displayPhoneDetails = phone => {
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.textContent = '';
     const div = document.createElement('div');
-    div.classList.add('col-md-12','col-10');
+    div.classList.add('col');
     div.innerHTML = `
     <div class="card p-2 border-0 " id="details-card">
         <img src="${phone.image}" class="card-img-top card-img">
@@ -77,12 +77,12 @@ const displayPhoneDetails = phone => {
             <p><span>Memory: </span>${phone.mainFeatures.memory}</p>
             <p><span>Sensor: </span>${phone.mainFeatures.sensors}</p>
             <h5>Others Features</h5><hr>
-            <p><span>WLAN: </span>${phone.others.WLAN}</p>
-            <p><span>Blutooth: </span>${phone.others.Bluetooth}</p>
-            <p><span>GPS: </span>${phone.others.GPS}</p>
-            <p><span>NFC: </span>${phone.others.NFC}</p>
-            <p><span>Radio: </span>${phone.others.Radio}</p>
-            <p><span>USB: </span>${phone.others.USB}</p>
+            <p><span>WLAN: </span>${phone.others?.WLAN}</p>
+            <p><span>Blutooth: </span>${phone.others?.Bluetooth}</p>
+            <p><span>GPS: </span>${phone.others?.GPS}</p>
+            <p><span>NFC: </span>${phone.others?.NFC}</p>
+            <p><span>Radio: </span>${phone.others?.Radio}</p>
+            <p><span>USB: </span>${phone.others?.USB}</p>
 
         </div>
     </div>
