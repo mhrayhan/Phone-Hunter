@@ -70,9 +70,9 @@ const displayPhoneDetails = phone => {
         <img src="${phone.image}" class="card-img-top card-img">
         <button id="close-btn" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         <div class="card-body ">
-            <h5 class="card-title">Model: ${phone.name}</h5>
-            <h6 class="card-title">Brand: ${phone.brand}</h6>
-            <p class="card-title">Release Date: ${phone.releaseDate ? phone.releaseDate : 'Release Date Not Found' }</p>
+            <h5 class="card-title model"><span id="model">Model: </span>${phone.name}</h5>
+            <h6 class="card-title brand"><span id="brand">Brand: </span>${phone.brand}</h6>
+            <p><span id="release-date">Release Date: </span>Release Date: ${phone.releaseDate ? phone.releaseDate : 'Release Date Not Found' }</p>
             <h5 class="features">Main Features</h5><hr>
             <p><span>Storage: </span>${phone.mainFeatures.storage}</p>
             <p><span>Display: </span>${phone.mainFeatures.displaySize}</p>

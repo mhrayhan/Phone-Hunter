@@ -100,6 +100,12 @@ label:focus,
 #input-group{
     width: 35%;
 }
+#model, #brand{
+    color: #ff9c2b;
+}
+#release-date{
+    color: #ff9c2b;
+}
 
 /* Mobile Resposive  */
 @media only screen and (max-width: 600px){
