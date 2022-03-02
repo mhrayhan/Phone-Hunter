@@ -89,7 +89,7 @@ background: linear-gradient(to bottom, #ffc65d, #ffac39);
 }
 .features::after{
     content: '';
-    width: 420px;
+    width: 100%;
     height: .5px;
     bottom: -8px;
     left: 0;
@@ -139,5 +139,7 @@ label:focus,
 #input-group{
     width: 80%;
 }
-
+.features::after{
+    width: 100%;
+}
 }
