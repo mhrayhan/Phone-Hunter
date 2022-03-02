@@ -8,10 +8,6 @@ const searchPhone = () => {
     .then(res => res.json())
     .then(data => displayPhone(data.data));
 }
-//toggle spinner
-const showSpinner = style =>{
-  document.getElementById('spinner').style.display = style;
-}
 
 /*==============Display Search Result=================*/
 const displayPhone = brandName => {
@@ -38,7 +34,7 @@ const displayPhone = brandName => {
         div.classList.add('col-md-4');
         div.innerHTML = `
         <div  class="card p-3 border-0 shadow rounded">
-            <img src="${phone.image}" class="card-img-top">
+            <img src="${phone.image}" class="card-img-top ">
             <div class="card-body ">
                 <h5 class="card-title">Model: ${phone.phone_name}</h5>
                 <h6 class="card-title">Brand: ${phone.brand}</h6>
@@ -58,6 +54,7 @@ const getApiById = phoneId => {
     .then(res => res.json())
     .then(data => displayPhoneDetails(data.data));
 }
+
 /* =================Display Phone Details===================== */
 const displayPhoneDetails = phone => {
     console.log(phone.others);
@@ -73,22 +70,27 @@ const displayPhoneDetails = phone => {
             <h5 class="card-title model"><span id="model">Model: </span>${phone.name}</h5>
             <h6 class="card-title brand"><span id="brand">Brand: </span>${phone.brand}</h6>
             <p><span id="release-date">Release Date: </span>Release Date: ${phone.releaseDate ? phone.releaseDate : 'Release Date Not Found' }</p>
-            <h5 class="features">Main Features</h5><hr>
+            <h5 class="features">Main Features</h5>
             <p><span>Storage: </span>${phone.mainFeatures.storage}</p>
             <p><span>Display: </span>${phone.mainFeatures.displaySize}</p>
             <p><span>Chipset: </span>${phone.mainFeatures.chipSet}</p>
             <p><span>Memory: </span>${phone.mainFeatures.memory}</p>
             <p><span>Sensor: </span>${phone.mainFeatures.sensors}</p>
-            <h5 class="features">Others Features</h5><hr>
+            <h5 class="features">Others Features</h5>
             <p><span>WLAN: </span>${phone.others?.WLAN}</p>
             <p><span>Blutooth: </span>${phone.others?.Bluetooth}</p>
             <p><span>GPS: </span>${phone.others?.GPS}</p>
             <p><span>NFC: </span>${phone.others?.NFC}</p>
             <p><span>Radio: </span>${phone.others?.Radio}</p>
             <p><span>USB: </span>${phone.others?.USB}</p>
-
         </div>
     </div>
     `
     phoneDetails.appendChild(div);
+}
+
+
+/* ==============Show spinner======================= */
+const showSpinner = style =>{
+  document.getElementById('spinner').style.display = style;
 }
